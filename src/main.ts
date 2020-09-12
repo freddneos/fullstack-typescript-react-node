@@ -1,9 +1,9 @@
 import {SERVER_PORT} from "./config";
 
-import * as web from "./web";
+import {server} from "./backend";
 
 async function main() {
-    await web.start(SERVER_PORT);
+    await server.start(SERVER_PORT);
     console.log(`Server started at http://localhost:${SERVER_PORT}`);
 }
 

@@ -9,5 +9,5 @@
     "esModuleInterop": true
   },
   "include": ["./src"],
-  "exclude": ["./src/web/frontend"]
+  "exclude": ["src/frontend"]
 }

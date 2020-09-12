@@ -14,6 +14,7 @@ app.use("/assets", express.static(path.join(__dirname, "frontend")));
 
 // Controllers
 app.get("/*", (req, res) => {
+    console.log("GET HERE ::: ")
     res.render("index");
 });
 

@@ -2,13 +2,13 @@ module.exports = {
     mode: "development",
 
     entry: {
-        main: "./src/web/frontend/main.tsx",
+        main: "./src/frontend/main.tsx",
     },
 
     output: {
         filename: "[name].bundle.js",
         chunkFilename: '[name].chunk.js',
-        path: __dirname + "/dist/web/frontend",
+        path: __dirname + "/dist/frontend",
         publicPath: "/assets/"
     },
 
