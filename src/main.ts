@@ -1,6 +1,6 @@
 import {SERVER_PORT} from "./config";
 
-import {server} from "./backend";
+import * as server from "./backend";
 
 async function main() {
     await server.start(SERVER_PORT);
