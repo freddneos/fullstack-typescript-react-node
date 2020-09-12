@@ -19,8 +19,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>{c}</h1>
-      <button onClick={() => increment(c + 1)}>Press me</button>
-      <button onClick={(prevState) => callApi(prevState)}>CALL API</button>
+      <button onClick={() => increment(c + 1)}>Press here</button>
+      <button onClick={(prevState) => callApi(prevState)}>Call API </button>
       <p>{apiMessage}</p>
     </div>
   );

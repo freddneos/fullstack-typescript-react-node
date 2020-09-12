@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
   console.log("Apis enpoint triggered");
-  res.json({ message: "backend listening" });
+  res.json({ message: "Backend listening Welcome to [ MERN Stack ]" });
 });
 
 // Start function
