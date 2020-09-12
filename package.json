@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:backend": "tsc",
     "build:frontend": "webpack",
-    "start": "npm install && npm run build:backend && npm run build:frontend && node ./dist/main.js",
-    "deploy": "npm run build:backend && npm run build:frontend && npm run start"
+    "start": "yarn install && yarn run build:backend && yarn run build:frontend && node ./dist/main.js",
+    "deploy": "yarn run build:backend && yarn run build:frontend && yarn run start"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.4.5",
+    "tsc": "^1.20150623.0",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
