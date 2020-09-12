@@ -17,9 +17,7 @@ _____
 ____
 ```
 $ npm install
-$ npm run build:backend
-$ npm run build:frontend
-$ npm start
+$ npm run deploy
 ```
 
 ### Let´s connect : 
