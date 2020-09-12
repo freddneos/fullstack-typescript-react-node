@@ -23,7 +23,7 @@ $ npm start
 ```
 
 ### Let´s connect : 
-[Linkedin](https://linkedin/in/fredericobezerra)
+[Linkedin](https://linkedin.com/in/fredericobezerra)
 
 [Instagram](https://instagram/freddbezerra)
 
