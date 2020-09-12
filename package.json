@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:backend": "tsc",
-    "build:frontend": "webpack",
+    "build:backend": "yarn run tsc",
+    "build:frontend": "yarn run webpack",
     "start": "yarn install && yarn run build:backend && yarn run build:frontend && node ./dist/main.js",
-    "deploy": "yarn run build:backend && yarn run build:frontend && yarn run start"
+    "deploy": "yarn run build:backend && yarn run build:frontend && yarn run start",
+    "tsc": "tsc",
+    "webpack": "webpack"
   },
   "keywords": [],
   "author": "",
