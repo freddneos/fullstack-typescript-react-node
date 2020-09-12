@@ -5,21 +5,25 @@ import path from "path";
 // Express app initialization
 const app = express();
 
+//workaround to frontend path
+const myPath = path.join(__dirname, "frontend").replace("\\backend", "");
+
 // Template configuration
 app.set("view engine", "ejs");
 app.set("views", "public");
 
 // Static files configuration
-app.use("/assets", () => {
-  let myPath = path.join(__dirname, "frontend");
-  myPath = myPath.replace("\\backend", "");
-  express.static(myPath);
-});
+app.use("/assets", express.static(myPath));
 
 // Controllers
-app.get("/*", (req, res) => {
-  console.log("GET HERE ::: ");
+app.get("/", (req, res) => {
+  console.log("Webapp endpoint called");
   res.render("index");
+});
+
+app.get("/api", (req, res) => {
+  console.log("Apis enpoint triggered");
+  res.json({ message: "backend listening" });
 });
 
 // Start function
