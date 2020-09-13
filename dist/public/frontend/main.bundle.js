@@ -221,8 +221,18 @@ const App = () => {
     const [c, increment] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
     const [apiMessage, setapiMessage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
     const callApi = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((prevState) => {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_config__WEBPACK_IMPORTED_MODULE_4__[/* SERVER_API_BASE_URL */ "a"]).then((response) => {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a
+            .get(_config__WEBPACK_IMPORTED_MODULE_4__[/* SERVER_API_BASE_URL */ "a"])
+            .then((response) => {
             setapiMessage(response.data.message || "Empty");
+        })
+            .catch((error) => {
+            console.log(error, "Error local environment... trying production...");
+            axios__WEBPACK_IMPORTED_MODULE_2___default.a
+                .get("https://mern-typescript.herokuapp.com/api")
+                .then((response) => {
+                setapiMessage(response.data.message || "Empty");
+            });
         });
     }, [apiMessage]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "App" },
