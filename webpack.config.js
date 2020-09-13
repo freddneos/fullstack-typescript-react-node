@@ -8,8 +8,8 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         chunkFilename: '[name].chunk.js',
-        path: __dirname + "/dist/frontend",
-        publicPath: "/assets/"
+        path: __dirname + "/dist/public/frontend",
+        publicPath: "public/assets/"
     },
 
     // Enable sourcemaps for debugging webpack's output.

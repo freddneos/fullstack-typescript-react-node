@@ -10,7 +10,7 @@ const path_1 = __importDefault(require("path"));
 // Express app initialization
 const app = express_1.default();
 //workaround to frontend path
-const myPath = path_1.default.join(__dirname, "frontend").replace("\\backend", "");
+const myPath = path_1.default.join(__dirname, "public/frontend").replace("\\backend", "");
 // Template configuration
 app.set("view engine", "ejs");
 app.set("views", "public");

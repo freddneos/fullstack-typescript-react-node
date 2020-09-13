@@ -6,7 +6,7 @@ import path from "path";
 const app = express();
 
 //workaround to frontend path
-const myPath = path.join(__dirname, "frontend").replace("\\backend", "");
+const myPath = path.join(__dirname, "public/frontend").replace("\\backend", "");
 
 // Template configuration
 app.set("view engine", "ejs");
