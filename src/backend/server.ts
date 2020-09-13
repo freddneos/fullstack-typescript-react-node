@@ -18,6 +18,7 @@ app.set("views", "public");
 // Static files configuration
 app.use("/assets", express.static(myPath));
 
+
 // Controllers
 app.get("/", (req, res) => {
   console.log("Webapp endpoint called");
@@ -28,7 +29,7 @@ app.get("/api", (req, res) => {
   console.log("Apis enpoint triggered");
   let myPath = path.join(__dirname, "public/frontend").replace("/backend", "");
   console.log(" ::::::: ",myPath);
-  res.json({ message: "Backend listening Welcome to [ MERN Stack ]" });
+  res.json({ message: "Backend listening Welcome to [ MERN Stack]" });
 });
 
 // Start function
