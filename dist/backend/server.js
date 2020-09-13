@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
 });
 app.get("/api", (req, res) => {
     console.log("Apis enpoint triggered");
+    let myPath = path_1.default.join(__dirname, "public/frontend").replace("\\backend", "");
+    console.log(" ::::::: ", myPath);
     res.json({ message: "Backend listening Welcome to [ MERN Stack ]" });
 });
 // Start function
