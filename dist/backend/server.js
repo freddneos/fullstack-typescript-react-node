@@ -10,7 +10,7 @@ const path_1 = __importDefault(require("path"));
 // Express app initialization
 const app = express_1.default();
 //workaround to frontend path
-const myPath = path_1.default.join(__dirname, "public/frontend").replace("\\backend", "");
+const myPath = path_1.default.join(__dirname, "public/frontend").replace("/backend", "");
 // Template configuration
 app.set("view engine", "ejs");
 app.set("views", "public");
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 app.get("/api", (req, res) => {
     console.log("Apis enpoint triggered");
-    let myPath = path_1.default.join(__dirname, "public/frontend").replace("\\backend", "");
+    let myPath = path_1.default.join(__dirname, "public/frontend").replace("/backend", "");
     console.log(" ::::::: ", myPath);
     res.json({ message: "Backend listening Welcome to [ MERN Stack ]" });
 });
