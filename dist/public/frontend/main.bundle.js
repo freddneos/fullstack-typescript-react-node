@@ -171,6 +171,28 @@ exports.push([module.i, ".App {\r\n    margin: 30px auto;\r\n    max-width: 320p
 
 /***/ }),
 
+/***/ "./src/config.ts":
+/*!***********************!*\
+  !*** ./src/config.ts ***!
+  \***********************/
+/*! exports provided: SERVER_PORT, SERVER_ENVIRONMENT, SERVER_API_BASE_URL */
+/*! exports used: SERVER_API_BASE_URL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export SERVER_PORT */
+/* unused harmony export SERVER_ENVIRONMENT */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_API_BASE_URL; });
+const SERVER_PORT = parseInt(process.env.SERVER_PORT || process.env.PORT || "3000");
+const SERVER_ENVIRONMENT = process.env.SERVER_ENVIRONMENT || process.env.ENVIRONMENT || "LOCAL";
+const SERVER_API_BASE_URL = process.env.API_URL ||
+    process.env.SERVER_API_URL ||
+    `http://127.0.0.1:${SERVER_PORT}/api`;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
 /***/ "./src/frontend/main.tsx":
 /*!*******************************!*\
   !*** ./src/frontend/main.tsx ***!
@@ -189,6 +211,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/frontend/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config */ "./src/config.ts");
+
 
 
 
@@ -197,7 +221,7 @@ const App = () => {
     const [c, increment] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
     const [apiMessage, setapiMessage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
     const callApi = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])((prevState) => {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:3000/api").then((response) => {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_config__WEBPACK_IMPORTED_MODULE_4__[/* SERVER_API_BASE_URL */ "a"]).then((response) => {
             setapiMessage(response.data.message || "Empty");
         });
     }, [apiMessage]);

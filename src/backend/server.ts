@@ -2,11 +2,14 @@ import express from "express";
 import http from "http";
 import path from "path";
 
+import {SERVER_ENVIRONMENT} from "../config";
+
+
 // Express app initialization
 const app = express();
 
 //workaround to frontend path
-const myPath = path.join(__dirname, "public/frontend").replace("/backend", "");
+const myPath = path.join(__dirname, "public/frontend").replace((SERVER_ENVIRONMENT !== "LOCAL" ? "/backend" : "\\backend"), "");
 
 // Template configuration
 app.set("view engine", "ejs");

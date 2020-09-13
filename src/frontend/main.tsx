@@ -2,6 +2,8 @@ import React, { useState, useCallback } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import "./style.css";
+import {SERVER_API_BASE_URL} from "../config";
+
 
 const App = () => {
   const [c, increment] = useState(0);
@@ -9,7 +11,7 @@ const App = () => {
 
   const callApi = useCallback(
     (prevState) => {
-      axios.get("http://127.0.0.1:3000/api").then((response) => {
+      axios.get(SERVER_API_BASE_URL).then((response) => {
         setapiMessage(response.data.message || "Empty");
       });
     },

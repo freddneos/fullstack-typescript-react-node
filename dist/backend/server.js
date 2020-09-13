@@ -7,10 +7,11 @@ exports.start = void 0;
 const express_1 = __importDefault(require("express"));
 const http_1 = __importDefault(require("http"));
 const path_1 = __importDefault(require("path"));
+const config_1 = require("../config");
 // Express app initialization
 const app = express_1.default();
 //workaround to frontend path
-const myPath = path_1.default.join(__dirname, "public/frontend").replace("/backend", "");
+const myPath = path_1.default.join(__dirname, "public/frontend").replace((config_1.SERVER_ENVIRONMENT !== "LOCAL" ? "/backend" : "\\backend"), "");
 // Template configuration
 app.set("view engine", "ejs");
 app.set("views", "public");
