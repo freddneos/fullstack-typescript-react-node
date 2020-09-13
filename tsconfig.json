@@ -9,5 +9,5 @@
     "esModuleInterop": true
   },
   "include": ["./src"],
-  "exclude": ["src/frontend"]
+  "exclude": ["src/frontend","src/backend/test/**/*.spec.ts"]
 }
